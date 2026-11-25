@@ -1,0 +1,6 @@
+{
+  "name": "PokerCue — Poker Odds Trainer, Hand Simulator & Equity Calculator",
+  "description": "100% client-side deterministic poker odds trainer, outs calculator, and hand equity simulator supporting 2-9 players, community streets, and discard draws in 10 languages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokerCue — Poker Odds Trainer, Hand Simulator &amp; Equity Calculator</title>
+    <meta
+      name="description"
+      content="Train poker probabilities by outs, player count (2-9), discard draws, and pot odds. Deterministic 100% client-side hand simulator and equity calculator in 10 languages."
+    />
+    <meta
+      name="keywords"
+      content="poker odds trainer, poker hand simulator, poker equity calculator, poker outs calculator, pot odds trainer, discard draw poker odds, Texas Holdem equity"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://pokercue.bastelar.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://pokercue.bastelar.com/" />
+    <link rel="alternate" hreflang="en" href="https://pokercue.bastelar.com/" />
+    <link rel="alternate" hreflang="es" href="https://pokercue.bastelar.com/?lang=es" />
+    <link rel="alternate" hreflang="fr" href="https://pokercue.bastelar.com/?lang=fr" />
+    <link rel="alternate" hreflang="de" href="https://pokercue.bastelar.com/?lang=de" />
+    <link rel="alternate" hreflang="pt" href="https://pokercue.bastelar.com/?lang=pt" />
+    <link rel="alternate" hreflang="ar" href="https://pokercue.bastelar.com/?lang=ar" />
+    <link rel="alternate" hreflang="hi" href="https://pokercue.bastelar.com/?lang=hi" />
+    <link rel="alternate" hreflang="ru" href="https://pokercue.bastelar.com/?lang=ru" />
+    <link rel="alternate" hreflang="zh" href="https://pokercue.bastelar.com/?lang=zh" />
+    <link rel="alternate" hreflang="ja" href="https://pokercue.bastelar.com/?lang=ja" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PokerCue" />
+    <meta property="og:url" content="https://pokercue.bastelar.com/" />
+    <meta property="og:title" content="PokerCue — Poker Odds Trainer, Hand Simulator &amp; Equity Calculator" />
+    <meta
+      property="og:description"
+      content="Train poker probabilities by outs, player count (2-9), discard draws, and pot odds. Deterministic client-side hand simulator and equity calculator."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PokerCue — Poker Odds Trainer, Hand Simulator &amp; Equity Calculator" />
+    <meta
+      name="twitter:description"
+      content="Train poker probabilities by outs, player count (2-9), discard draws, and pot odds. Deterministic 100% client-side hand simulator."
+    />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23047857'/%3E%3Cpath d='M16 6c-3 4.5-7 7.5-7 11.2a4.3 4.3 0 0 0 4.3 4.3c1.1 0 2-.4 2.7-1.1-.1 1.7-.7 3.3-2 4.6h4c-1.3-1.3-1.9-2.9-2-4.6.7.7 1.6 1.1 2.7 1.1a4.3 4.3 0 0 0 4.3-4.3C23 13.5 19 10.5 16 6z' fill='%23ffffff'/%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" id="pokercue-jsonld">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "PokerCue — Poker Odds Trainer, Hand Simulator & Equity Calculator",
+            "url": "https://pokercue.bastelar.com/",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "All",
+            "inLanguage": "en",
+            "description": "100% client-side deterministic poker odds trainer, outs calculator, and hand equity simulator supporting 2-9 players, community streets, and discard draws.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "HowTo",
+            "name": "How to Train Poker Odds and Simulate Hand Equity",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Select training parameters or cards",
+                "text": "Choose your target draw or made hand, table player count from 2 to 9, street or discard exchange mode, and pot/call size."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Estimate equity and compare pot odds",
+                "text": "Enter your probability estimate in the Trainer or run deterministic simulations in the Hand Simulator."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Inspect exact outs and hand distribution",
+                "text": "Review exact favorable outs, Win/Tie/Loss percentages, and the final hand distribution SVG chart."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do PokerCue odds calculations work without a server or AI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "PokerCue runs exact combinatorics and deterministic seeded Monte Carlo simulations directly in your browser using TypeScript."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the number of players affect hand equity?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Each additional active opponent increases the likelihood that another player makes a stronger hand or catches a higher pair, reducing single-hand showdown survival."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#F8FAFC] text-slate-900 antialiased selection:bg-emerald-100 selection:text-emerald-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
