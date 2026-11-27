@@ -190,6 +190,9 @@ export interface TranslationBundle {
   gearHeading: string;
   gearSubheading: string;
   gearItems: GearItem[];
+  affiliateDisclosure: string;
+  contextualStudyBookLabel: string;
+  contextualStudyBookTitle: string;
   guideHeading: string;
   guideSubheading: string;
   guideSections: GuideSection[];

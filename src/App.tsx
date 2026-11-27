@@ -20,7 +20,8 @@ import {ProbabilityTrainer} from './components/ProbabilityTrainer';
 import {HandSimulator} from './components/HandSimulator';
 import {LocalWorkspacePanel} from './components/LocalWorkspacePanel';
 import {
-  EditorialGuideAndFaq,
+  EditorialGuideSection,
+  FaqSection,
   MediaNetAdSlot,
   PracticeGearSection,
 } from './components/MonetizationAndSeo';
@@ -297,11 +298,14 @@ export default function App() {
           variant="leaderboard"
         />
 
-        {/* Contextual Practice Gear (Sponsored Affiliate Block) */}
+        {/* Editorial SEO Guide (with contextual study book recommendation) */}
+        <EditorialGuideSection t={t} />
+
+        {/* Contextual Practice Gear (Amazon.es Affiliate Placement) */}
         <PracticeGearSection t={t} />
 
-        {/* Editorial SEO Guide & FAQ */}
-        <EditorialGuideAndFaq t={t} />
+        {/* Interactive FAQ & Transparent Disclaimer */}
+        <FaqSection t={t} />
 
         {/* Media.net Ad Placement 2 (Bottom of page) */}
         <MediaNetAdSlot
@@ -313,14 +317,17 @@ export default function App() {
 
       {/* Quiet Footer */}
       <footer className="no-print border-t border-slate-200 bg-white py-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
-          <span>{t.footerNote}</span>
-          <a
-            href={shareUrl}
-            className="font-mono-tabular text-slate-600 hover:text-slate-900 hover:underline"
-          >
-            {shareUrl}
-          </a>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
+            <span>{t.footerNote}</span>
+            <a
+              href={shareUrl}
+              className="font-mono-tabular text-slate-600 hover:text-slate-900 hover:underline"
+            >
+              {shareUrl}
+            </a>
+          </div>
+          <p className="text-[11px] text-slate-500">{t.affiliateDisclosure}</p>
         </div>
       </footer>
     </div>

@@ -1,3 +1,4 @@
+import {buildAmazonEsSearchUrl} from '../utils/affiliate';
 import {TranslationBundle} from './types';
 
 export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationBundle> = {
@@ -158,8 +159,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Theory & Probability Manual',
         description:
           'Foundational analytical reference covering pot odds, combinatorics, expectation, and game-theory frameworks.',
-        cta: 'View Reference',
-        href: 'https://www.amazon.com/s?k=The+Mathematics+of+Poker+Bill+Chen',
+        cta: 'View on Amazon.es',
+        href: buildAmazonEsSearchUrl('The Mathematics of Poker Bill Chen'),
         category: 'book',
       },
       {
@@ -167,8 +168,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Portable Felt Layout',
         description:
           'Smooth speed-cloth surface for dealing physical boards, counting outs, and running live home study drills.',
-        cta: 'Explore Mats',
-        href: 'https://www.amazon.com/s?k=neoprene+poker+table+mat',
+        cta: 'Explore Mats (Amazon.es)',
+        href: buildAmazonEsSearchUrl('tapete poker neopreno mesa'),
         category: 'mat',
       },
       {
@@ -176,8 +177,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Waterproof Practice Cards',
         description:
           'Durable PVC playing cards with crisp jumbo corner indices designed for rapid hand reading and shuffling.',
-        cta: 'Explore Decks',
-        href: 'https://www.amazon.com/s?k=100+percent+plastic+jumbo+index+poker+cards',
+        cta: 'Explore Decks (Amazon.es)',
+        href: buildAmazonEsSearchUrl('baraja poker 100 plastico jumbo'),
         category: 'cards',
       },
       {
@@ -185,11 +186,15 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Tournament Clock',
         description:
           'High-contrast interval clock for structured home practice tables, blind levels, and timed decision drills.',
-        cta: 'Explore Timers',
-        href: 'https://www.amazon.com/s?k=poker+tournament+timer+clock',
+        cta: 'Explore Timers (Amazon.es)',
+        href: buildAmazonEsSearchUrl('temporizador reloj torneo poker'),
         category: 'timer',
       },
     ],
+    affiliateDisclosure:
+      'Affiliate disclosure: As an Amazon Spain Associate (tag=bastelar-21), PokerCue earns from qualifying purchases made through Amazon.es links at no extra cost to you.',
+    contextualStudyBookLabel: 'Recommended math reference:',
+    contextualStudyBookTitle: 'The Mathematics of Poker (Amazon.es)',
 
     guideHeading: 'Poker Probability & Equity Reference Guide',
     guideSubheading:
@@ -416,8 +421,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Manual de Teoría y Probabilidad',
         description:
           'Referencia analítica esencial sobre pot odds, combinatoria, valor esperado y teoría de juegos.',
-        cta: 'Ver Manual',
-        href: 'https://www.amazon.com/s?k=The+Mathematics+of+Poker+Bill+Chen',
+        cta: 'Ver en Amazon.es',
+        href: buildAmazonEsSearchUrl('The Mathematics of Poker Bill Chen'),
         category: 'book',
       },
       {
@@ -425,8 +430,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Superficie de Mesa Portátil',
         description:
           'Tapete de tela rápida para repartir flops reales, contar outs y ensayar lecturas de mesa en casa.',
-        cta: 'Ver Tapetes',
-        href: 'https://www.amazon.com/s?k=tapete+poker+neopreno',
+        cta: 'Ver Tapetes (Amazon.es)',
+        href: buildAmazonEsSearchUrl('tapete poker neopreno mesa'),
         category: 'mat',
       },
       {
@@ -434,8 +439,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Baraja Lavable de Práctica',
         description:
           'Cartas de PVC resistentes con índices jumbo diseñados para una lectura rápida y mezcla sin marcas.',
-        cta: 'Ver Barajas',
-        href: 'https://www.amazon.com/s?k=baraja+poker+100+plastico+jumbo',
+        cta: 'Ver Barajas (Amazon.es)',
+        href: buildAmazonEsSearchUrl('baraja poker 100 plastico jumbo'),
         category: 'cards',
       },
       {
@@ -443,11 +448,15 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Reloj de Ciegas y Sesiones',
         description:
           'Cronómetro de alto contraste para niveles de ciegas, sesiones cronometradas y práctica en grupo.',
-        cta: 'Ver Relojes',
-        href: 'https://www.amazon.com/s?k=reloj+temporizador+torneo+poker',
+        cta: 'Ver Relojes (Amazon.es)',
+        href: buildAmazonEsSearchUrl('temporizador reloj torneo poker'),
         category: 'timer',
       },
     ],
+    affiliateDisclosure:
+      'Aviso legal de afiliados: Como Afiliado de Amazon España (tag=bastelar-21), PokerCue obtiene ingresos por compras adscritas realizadas en Amazon.es sin coste adicional para ti.',
+    contextualStudyBookLabel: 'Manual matemático recomendado:',
+    contextualStudyBookTitle: 'The Mathematics of Poker (Amazon.es)',
 
     guideHeading: 'Guía Práctica de Probabilidad y Equidad en Póker',
     guideSubheading:
@@ -674,8 +683,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Manuel Théorie & Probabilités',
         description:
           'Ouvrage de référence sur les cotes du pot, la combinatoire et la théorie des jeux.',
-        cta: 'Voir le Livre',
-        href: 'https://www.amazon.com/s?k=The+Mathematics+of+Poker+Bill+Chen',
+        cta: 'Voir sur Amazon.es',
+        href: buildAmazonEsSearchUrl('The Mathematics of Poker Bill Chen'),
         category: 'book',
       },
       {
@@ -683,8 +692,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Surface de Jeu Portable',
         description:
           'Revêtement lisse pour distribuer des tableaux réels et compter les outs à la maison.',
-        cta: 'Voir les Tapis',
-        href: 'https://www.amazon.com/s?k=tapis+poker+neoprene',
+        cta: 'Voir les Tapis (Amazon.es)',
+        href: buildAmazonEsSearchUrl('tapete poker neopreno mesa'),
         category: 'mat',
       },
       {
@@ -692,8 +701,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Cartes Lavables Index Large',
         description:
           'Cartes PVC durables à grands index pour une lecture instantanée lors des exercices.',
-        cta: 'Voir les Cartes',
-        href: 'https://www.amazon.com/s?k=cartes+poker+100+plastique+jumbo',
+        cta: 'Voir les Cartes (Amazon.es)',
+        href: buildAmazonEsSearchUrl('baraja poker 100 plastico jumbo'),
         category: 'cards',
       },
       {
@@ -701,11 +710,15 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Horloge de Blindes',
         description:
           'Chronomètre lisible pour structurer vos tables d’entraînement et paliers de blindes.',
-        cta: 'Voir les Horloges',
-        href: 'https://www.amazon.com/s?k=horloge+tournoi+poker',
+        cta: 'Voir les Horloges (Amazon.es)',
+        href: buildAmazonEsSearchUrl('temporizador reloj torneo poker'),
         category: 'timer',
       },
     ],
+    affiliateDisclosure:
+      'Mention légale d’affiliation : En tant que Partenaire Amazon Espagne (tag=bastelar-21), PokerCue perçoit une rémunération sur les achats éligibles effectués via Amazon.es sans surcoût pour vous.',
+    contextualStudyBookLabel: 'Référence mathématique recommandée :',
+    contextualStudyBookTitle: 'The Mathematics of Poker (Amazon.es)',
 
     guideHeading: 'Guide Pratique des Probabilités au Poker',
     guideSubheading:
@@ -932,8 +945,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Theorie- & Statistik-Handbuch',
         description:
           'Standardwerk zu Pot Odds, Kombinatorik, Erwartungswert und Spieltheorie.',
-        cta: 'Buch ansehen',
-        href: 'https://www.amazon.com/s?k=The+Mathematics+of+Poker+Bill+Chen',
+        cta: 'Auf Amazon.es ansehen',
+        href: buildAmazonEsSearchUrl('The Mathematics of Poker Bill Chen'),
         category: 'book',
       },
       {
@@ -941,8 +954,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Tragbare Tischauflage',
         description:
           'Glatte Spielfläche zum schnellen Austeilen und Trainieren von Flop- und Turn-Outs.',
-        cta: 'Matten ansehen',
-        href: 'https://www.amazon.com/s?k=poker+tischauflage+neopren',
+        cta: 'Matten (Amazon.es)',
+        href: buildAmazonEsSearchUrl('tapete poker neopreno mesa'),
         category: 'mat',
       },
       {
@@ -950,8 +963,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Abwaschbare Übungsdecks',
         description:
           'Robuste PVC-Karten mit großem Eckindex für schnelles Erkennen beim Training.',
-        cta: 'Karten ansehen',
-        href: 'https://www.amazon.com/s?k=pokerkarten+100+plastik+jumbo',
+        cta: 'Karten (Amazon.es)',
+        href: buildAmazonEsSearchUrl('baraja poker 100 plastico jumbo'),
         category: 'cards',
       },
       {
@@ -959,11 +972,15 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Blind- & Trainingsuhr',
         description:
           'Kontrastreicher Timer für strukturierte Trainingsrunden und Blind-Intervalle.',
-        cta: 'Timer ansehen',
-        href: 'https://www.amazon.com/s?k=poker+turnier+timer',
+        cta: 'Timer (Amazon.es)',
+        href: buildAmazonEsSearchUrl('temporizador reloj torneo poker'),
         category: 'timer',
       },
     ],
+    affiliateDisclosure:
+      'Affiliate-Hinweis: Als Amazon-Spanien-Partner (tag=bastelar-21) verdient PokerCue an qualifizierten Verkäufen über Amazon.es-Links ohne Mehrkosten für Sie.',
+    contextualStudyBookLabel: 'Empfohlenes Fachbuch:',
+    contextualStudyBookTitle: 'The Mathematics of Poker (Amazon.es)',
 
     guideHeading: 'Poker-Wahrscheinlichkeits- & Equity-Leitfaden',
     guideSubheading:
@@ -1190,8 +1207,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Manual de Teoria e Probabilidade',
         description:
           'Referência clássica sobre pot odds, combinatória, valor esperado e teoria dos jogos.',
-        cta: 'Ver Livro',
-        href: 'https://www.amazon.com/s?k=The+Mathematics+of+Poker+Bill+Chen',
+        cta: 'Ver na Amazon.es',
+        href: buildAmazonEsSearchUrl('The Mathematics of Poker Bill Chen'),
         category: 'book',
       },
       {
@@ -1199,8 +1216,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Superfície de Feltro Portátil',
         description:
           'Pano deslizante ideal para distribuir bordos reais e praticar contagem de outs.',
-        cta: 'Ver Tapetes',
-        href: 'https://www.amazon.com/s?k=tapete+poker+neoprene',
+        cta: 'Ver Tapetes (Amazon.es)',
+        href: buildAmazonEsSearchUrl('tapete poker neopreno mesa'),
         category: 'mat',
       },
       {
@@ -1208,8 +1225,8 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Cartas Laváveis',
         description:
           'Cartas de PVC duráveis com índices grandes para leitura instantânea em treinos.',
-        cta: 'Ver Baralhos',
-        href: 'https://www.amazon.com/s?k=baralho+poker+plastico+jumbo',
+        cta: 'Ver Baralhos (Amazon.es)',
+        href: buildAmazonEsSearchUrl('baraja poker 100 plastico jumbo'),
         category: 'cards',
       },
       {
@@ -1217,11 +1234,15 @@ export const LOCALES_WEST: Record<'en' | 'es' | 'fr' | 'de' | 'pt', TranslationB
         subtitle: 'Cronômetro de Blinds',
         description:
           'Timer digital de alto contraste para organizar níveis de blinds e sessões de estudo.',
-        cta: 'Ver Timers',
-        href: 'https://www.amazon.com/s?k=poker+tournament+timer',
+        cta: 'Ver Timers (Amazon.es)',
+        href: buildAmazonEsSearchUrl('temporizador reloj torneo poker'),
         category: 'timer',
       },
     ],
+    affiliateDisclosure:
+      'Aviso legal de afiliados: Como Associado da Amazon Espanha (tag=bastelar-21), o PokerCue recebe comissões por compras qualificadas realizadas através da Amazon.es sem custo extra para você.',
+    contextualStudyBookLabel: 'Referência matemática recomendada:',
+    contextualStudyBookTitle: 'The Mathematics of Poker (Amazon.es)',
 
     guideHeading: 'Guia Prático de Probabilidade e Equidade no Pôquer',
     guideSubheading:

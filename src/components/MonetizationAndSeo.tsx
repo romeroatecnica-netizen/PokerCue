@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {ChevronDown, ExternalLink} from 'lucide-react';
 import {GearItem, TranslationBundle} from '../i18n/types';
+import {enforceAmazonEsAffiliateUrl} from '../utils/affiliate';
 
 export const MediaNetAdSlot: React.FC<{
   slotId: string;
@@ -63,107 +64,146 @@ const GearIllustration: React.FC<{category: GearItem['category']}> = ({category}
 
 export const PracticeGearSection: React.FC<{t: TranslationBundle}> = ({t}) => {
   return (
-    <section className="no-print bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-7">
+    <section
+      id="study-gear"
+      aria-labelledby="gear-heading"
+      className="no-print bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-7"
+    >
       <div className="mb-5">
-        <h2 className="text-lg font-bold text-slate-900">{t.gearHeading}</h2>
+        <h2 id="gear-heading" className="text-lg font-bold text-slate-900">
+          {t.gearHeading}
+        </h2>
         <p className="mt-1 text-sm text-slate-600">{t.gearSubheading}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {t.gearItems.map((item) => (
+        {t.gearItems.map((item) => {
+          const affiliateHref = enforceAmazonEsAffiliateUrl(item.href);
+          return (
+            <a
+              key={item.title}
+              href={affiliateHref}
+              target="_blank"
+              rel="sponsored nofollow noopener"
+              className="group flex flex-col justify-between p-4 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 rounded-xl transition-colors"
+            >
+              <div>
+                <div className="mb-3">
+                  <GearIllustration category={item.category} />
+                </div>
+                <div className="text-xs font-medium text-slate-500">{item.subtitle}</div>
+                <h3 className="mt-0.5 text-sm font-bold text-slate-900 group-hover:text-[#1E40AF]">
+                  {item.title}
+                </h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
+                  {item.description}
+                </p>
+              </div>
+              <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#1E40AF]">
+                {item.cta}
+                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <p className="mt-4 pt-3 border-t border-slate-200 text-xs leading-relaxed text-slate-500">
+        {t.affiliateDisclosure}
+      </p>
+    </section>
+  );
+};
+
+export const EditorialGuideSection: React.FC<{t: TranslationBundle}> = ({t}) => {
+  const bookHref = enforceAmazonEsAffiliateUrl('The Mathematics of Poker Bill Chen');
+
+  return (
+    <section
+      id="guide"
+      aria-labelledby="guide-heading"
+      className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-7"
+    >
+      <div className="max-w-3xl mb-6">
+        <h2 id="guide-heading" className="text-xl sm:text-2xl font-bold text-slate-900">
+          {t.guideHeading}
+        </h2>
+        <p className="mt-1.5 text-sm text-slate-600">{t.guideSubheading}</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+        {t.guideSections.map((sec) => (
+          <article key={sec.title} className="pt-4 border-t border-slate-200">
+            <h3 className="text-base font-bold text-slate-900">{sec.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">{sec.body}</p>
+            <p className="mt-2.5 text-xs font-mono-tabular font-semibold text-[#047857]">
+              {sec.highlight}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <div className="no-print mt-6 pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="font-medium text-slate-700">{t.contextualStudyBookLabel}</span>
           <a
-            key={item.title}
-            href={item.href}
+            href={bookHref}
             target="_blank"
             rel="sponsored nofollow noopener"
-            className="group flex flex-col justify-between p-4 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 rounded-xl transition-colors"
+            className="inline-flex items-center gap-1 font-semibold text-[#1E40AF] hover:underline"
           >
-            <div>
-              <div className="mb-3">
-                <GearIllustration category={item.category} />
-              </div>
-              <div className="text-xs font-medium text-slate-500">{item.subtitle}</div>
-              <h3 className="mt-0.5 text-sm font-bold text-slate-900 group-hover:text-[#1E40AF]">
-                {item.title}
-              </h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
-                {item.description}
-              </p>
-            </div>
-            <div className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#1E40AF]">
-              {item.cta}
-              <ExternalLink className="w-3.5 h-3.5" />
-            </div>
+            {t.contextualStudyBookTitle}
+            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
           </a>
-        ))}
+        </div>
+        <span className="text-slate-500">{t.affiliateDisclosure}</span>
       </div>
     </section>
   );
 };
 
-export const EditorialGuideAndFaq: React.FC<{t: TranslationBundle}> = ({t}) => {
+export const FaqSection: React.FC<{t: TranslationBundle}> = ({t}) => {
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(0);
 
   return (
-    <div className="space-y-8">
-      {/* Editorial SEO Guide */}
-      <section id="guide" aria-labelledby="guide-heading" className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-7">
-        <div className="max-w-3xl mb-6">
-          <h2 id="guide-heading" className="text-xl sm:text-2xl font-bold text-slate-900">
-            {t.guideHeading}
-          </h2>
-          <p className="mt-1.5 text-sm text-slate-600">{t.guideSubheading}</p>
-        </div>
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-7"
+    >
+      <h2 id="faq-heading" className="text-xl font-bold text-slate-900 mb-4">
+        {t.faqHeading}
+      </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-          {t.guideSections.map((sec) => (
-            <article key={sec.title} className="pt-4 border-t border-slate-200">
-              <h3 className="text-base font-bold text-slate-900">{sec.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{sec.body}</p>
-              <p className="mt-2.5 text-xs font-mono-tabular font-semibold text-[#047857]">
-                {sec.highlight}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
+        {t.faqItems.map((item, idx) => {
+          const isOpen = openFaqIdx === idx;
+          return (
+            <div key={item.question}>
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
+                className="w-full flex items-center justify-between gap-4 py-4 text-left text-sm font-semibold text-slate-900 hover:text-[#1E40AF] transition-colors cursor-pointer"
+              >
+                <span>{item.question}</span>
+                <ChevronDown
+                  className={`w-4 h-4 shrink-0 text-slate-500 transition-transform duration-150 ${
+                    isOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              {isOpen && (
+                <div className="pb-4 text-sm leading-relaxed text-slate-600">
+                  {item.answer}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
 
-      {/* Interactive FAQ Accordion */}
-      <section id="faq" aria-labelledby="faq-heading" className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-7">
-        <h2 id="faq-heading" className="text-xl font-bold text-slate-900 mb-4">
-          {t.faqHeading}
-        </h2>
-
-        <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
-          {t.faqItems.map((item, idx) => {
-            const isOpen = openFaqIdx === idx;
-            return (
-              <div key={item.question}>
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
-                  className="w-full flex items-center justify-between gap-4 py-4 text-left text-sm font-semibold text-slate-900 hover:text-[#1E40AF] transition-colors cursor-pointer"
-                >
-                  <span>{item.question}</span>
-                  <ChevronDown
-                    className={`w-4 h-4 shrink-0 text-slate-500 transition-transform duration-150 ${
-                      isOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="pb-4 text-sm leading-relaxed text-slate-600">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="mt-5 text-xs leading-relaxed text-slate-500">{t.disclaimerText}</p>
-      </section>
-    </div>
+      <p className="mt-5 text-xs leading-relaxed text-slate-500">{t.disclaimerText}</p>
+    </section>
   );
 };
